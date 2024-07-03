@@ -1,10 +1,11 @@
-import React from "react"
+import React from "react";
+import "./homeSelectOption.scss"
 
 export const HomeSelectOption: React.FC = () => {
     return (
-        <div className="container">
+        <div className="container_options">
             <button className="option">
-                <span>Simulator QUEUE</span>
+                <span>Simulator Queue</span>
             </button>
             <button className="option">
                 <span>Simulator Stack</span>
