@@ -1,10 +1,8 @@
-import { Queue } from "components/Queue";
 import "./main.css";
+import { AppRoutes } from "./routes";
 
 export function Main() {
   return (
-    <>
-      <Queue />
-    </>
+    <AppRoutes />
   );
 }
