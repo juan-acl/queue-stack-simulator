@@ -1,15 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./homeSelectOption.scss"
 
 export const HomeSelectOption: React.FC = () => {
     return (
         <div className="container_options">
-            <button className="option">
-                <span>Simulator Queue</span>
-            </button>
-            <button className="option">
-                <span>Simulator Stack</span>
-            </button>
+            <Link className="option" to={"/queue"}> Simulator Queue</Link>
+            <Link className="option" to={"/queue"}> Simulator Stack</Link>
         </div>
     )
 }
