@@ -9,7 +9,7 @@ export const Stack: React.FC = () => {
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [data, setData] = useState<RowData[]>(stack.getAllData());
 
-    const unShiftStack = (rowData: RowData) => {
+    const pushStack = (rowData: RowData) => {
         stack.push(rowData);
         setData([...stack._data]);
     };
@@ -33,7 +33,7 @@ export const Stack: React.FC = () => {
             <div className="container-table" >
                 <Table columns={columns} data={data} />
             </div>
-            <ModalStack unShiftStack={unShiftStack} openModal={openModal} setOpenModal={setOpenModal} />
+            <ModalStack pushStack={pushStack} openModal={openModal} setOpenModal={setOpenModal} />
         </>
     )
 }

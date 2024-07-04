@@ -6,7 +6,7 @@ import "./stackStyle.scss";
 interface ModalStackProps {
     openModal: boolean;
     setOpenModal: (openModal: boolean) => void;
-    unShiftStack: (data: RowData) => void;
+    pushStack: (data: RowData) => void;
 }
 
 interface FormData {
@@ -16,7 +16,7 @@ interface FormData {
     status: string;
 }
 
-export const ModalStack = ({ openModal, setOpenModal, unShiftStack }: ModalStackProps) => {
+export const ModalStack = ({ openModal, setOpenModal, pushStack }: ModalStackProps) => {
     const initialState: FormData = {
         name: '',
         lastname: '',
@@ -41,7 +41,7 @@ export const ModalStack = ({ openModal, setOpenModal, unShiftStack }: ModalStack
             alert('Por favor lleva todos los campos');
             return;
         }
-        unShiftStack({
+        pushStack({
             id: v4(),
             name: formData.name,
             lastname: formData.lastname,
