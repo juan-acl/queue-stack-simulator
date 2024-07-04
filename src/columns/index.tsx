@@ -5,7 +5,6 @@ export interface RowData {
     lastname: string;
     date: string;
     status: string;
-    actions: any;
 }
 
 export const columns = [
@@ -28,9 +27,5 @@ export const columns = [
     {
         name: 'Estado',
         selector: (row: RowData) => row.status,
-    },
-    {
-        name: 'Acciones',
-        selector: (row: RowData) => row.actions,
     },
 ]

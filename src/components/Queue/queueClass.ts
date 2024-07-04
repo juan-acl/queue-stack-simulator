@@ -1,28 +1,24 @@
 export class Queue<T> {
-    private _data: T[] = [];
+    public _data: T[] = [];
 
     enqueue(data: T) {
-        this._data.unshift(data);
+        this._data.push(data);
     }
 
-    dequeue() {
-        if (this._data.length === 0) return null
-        return this._data.shift();
+    dequeue(): T | null {
+        if (this._data.length === 0) return null;
+        return this._data.shift() || null;
     }
 
-    peek() {
-        return this._data[0];
+    peek(): T | null {
+        return this._data.length > 0 ? this._data[0] : null;
     }
 
-    data() {
-        return this._data;
-    }
-
-    size() {
+    size(): number {
         return this._data.length;
     }
 
-    isEmpty() {
+    isEmpty(): boolean {
         return this._data.length === 0;
     }
 
@@ -30,4 +26,7 @@ export class Queue<T> {
         this._data = [];
     }
 
+    getAllData() {
+        return this._data;
+    }
 }
